@@ -32,6 +32,13 @@ public class MyActionListener implements ActionListener {
 			}
 			
 		}
+		if (obj == f.btnZurücksetzten) {
+			double zurueck = f.myTank.getFuellstand();
+			zurueck = zurueck - zurueck;
+			f.myTank.setFuellstand(zurueck);
+			f.lblFuellstand.setText(""+zurueck);
+		}
+		
 
 	}
 	
