@@ -1,5 +1,7 @@
 package de.futurehome.tanksimulator;
 import java.awt.BorderLayout;
+import java.awt.TextArea;
+
 import java.awt.Button;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -13,6 +15,10 @@ public class TankSimulator extends Frame {
 	
 	public Tank myTank;
 	
+
+	TextArea log = new TextArea(10, 40);
+	
+
 	private Label lblUeberschrift = new Label("Tank-Simulator");
 	public  Label lblFuellstand = new Label("     ");
 	public Label lbProzent = new Label("    "); 
@@ -48,6 +54,7 @@ public class TankSimulator extends Frame {
 		this.add(this.pnlCenter, BorderLayout.CENTER);
 		this.add(this.pnlSouth, BorderLayout.SOUTH);
 		this.add(this.pnlWest, BorderLayout.WEST);
+		this.add(this.log, BorderLayout.EAST);
 		this.pack();
 		this.setVisible(true);
 		

@@ -18,6 +18,7 @@ public class MyActionListener implements ActionListener {
 			double fuellstand = f.myTank.getFuellstand();
 			if (fuellstand <200) {
 				fuellstand = fuellstand + 5;
+				f.log.append("5 Liter in Tank gefültt! \n");
 				if ( fuellstand > 200) {
 					fuellstand = 200;
 				}
@@ -27,6 +28,7 @@ public class MyActionListener implements ActionListener {
 				f.lblFuellstand.setText(""+fuellstand);}else {
 					f.lblFuellstand.setText("Ihr Tank ist voll!	Sie haben 200L");
 					f.lbProzent.setText(100+"%");
+					f.log.append("Tank voll! \n");
 				}
 		}
 		if (obj == f.btnVerbrauchen && f.myTank.getFuellstand() > 1) {
