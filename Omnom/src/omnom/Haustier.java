@@ -20,25 +20,33 @@ public class Haustier {
 		return hunger;
 	}
 	public void setHunger(int hunger) {
+		if (hunger <100 && hunger > 0) {
 		this.hunger = hunger;
+		}
 	}
 	public int getMuede() {
 		return muede;
 	}
 	public void setMuede(int muede) {
+		if (muede <100 && muede > 0) {
 		this.muede = muede;
+		}
 	}
 	public int getZufrieden() {
 		return zufrieden;
 	}
 	public void setZufrieden(int zufrieden) {
+		if (zufrieden <100 && zufrieden > 0) {
 		this.zufrieden = zufrieden;
+		}
 	}
-	public int getGesund() {
+	public int getGesund() {   
 		return gesund;
 	}
 	public void setGesund(int gesund) {
+		if (gesund <100 && gesund > 0) {
 		this.gesund = gesund;
+		} 
 	}
 	public String getName() {
 		return name;
