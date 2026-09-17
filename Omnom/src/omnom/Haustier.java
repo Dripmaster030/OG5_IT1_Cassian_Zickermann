@@ -28,7 +28,7 @@ public class Haustier {
 		return muede;
 	}
 	public void setMuede(int muede) {
-		if (muede <100 && muede > 0) {
+		if (muede  <100 && muede > 0) {
 		this.muede = muede;
 		}
 	}
@@ -55,12 +55,15 @@ public class Haustier {
 		this.name = name;
 	}
 	public void fuettern(int anzahl) {
-		
+		this.hunger = this.hunger + anzahl;
 	}
 	public void schlafen(int dauer) {
-		
+		this.muede = this.muede + dauer;
+	}
+	public void spielen(int dauer) {
+		this.zufrieden = this.zufrieden + dauer;
 	}
 	public void heilen() {
-		   
+		   this.gesund = this.gesund + 100;
 	}
 }
