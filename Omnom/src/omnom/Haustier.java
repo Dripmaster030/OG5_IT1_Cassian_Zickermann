@@ -10,7 +10,8 @@ public class Haustier {
 	
 	//Methoden 
 	public Haustier() {}
-	public Haustier(String name) {
+	public Haustier(String name){
+		this.name = name;
 		this.hunger = 100;
 		this.muede = 100;
 		this.zufrieden = 100;
@@ -20,7 +21,7 @@ public class Haustier {
 		return hunger;
 	}
 	public void setHunger(int hunger) {
-		if (hunger <100 && hunger > 0) {
+		if (hunger <= 100 && hunger >= 0) {
 		this.hunger = hunger;
 		}
 	}
@@ -28,7 +29,7 @@ public class Haustier {
 		return muede;
 	}
 	public void setMuede(int muede) {
-		if (muede  <100 && muede > 0) {
+		if (muede  <= 100 && muede >= 0) {
 		this.muede = muede;
 		}
 	}
@@ -36,7 +37,7 @@ public class Haustier {
 		return zufrieden;
 	}
 	public void setZufrieden(int zufrieden) {
-		if (zufrieden <100 && zufrieden > 0) {
+		if (zufrieden <= 100 && zufrieden >= 0) {
 		this.zufrieden = zufrieden;
 		}
 	}
@@ -44,7 +45,7 @@ public class Haustier {
 		return gesund;
 	}
 	public void setGesund(int gesund) {
-		if (gesund <100 && gesund > 0) {
+		if (gesund <= 100 && gesund >= 0) {
 		this.gesund = gesund;
 		} 
 	}
@@ -55,15 +56,15 @@ public class Haustier {
 		this.name = name;
 	}
 	public void fuettern(int anzahl) {
-		this.hunger = this.hunger + anzahl;
+	    this.hunger = Math.min(100, this.hunger + anzahl);
 	}
 	public void schlafen(int dauer) {
-		this.muede = this.muede + dauer;
+		this.muede = Math.min(this.muede + dauer, 100);
 	}
 	public void spielen(int dauer) {
-		this.zufrieden = this.zufrieden + dauer;
+		this.zufrieden = Math.min(this.zufrieden + dauer, 100);
 	}
 	public void heilen() {
-		   this.gesund = this.gesund + 100;
+	    this.gesund = 100;
 	}
 }
