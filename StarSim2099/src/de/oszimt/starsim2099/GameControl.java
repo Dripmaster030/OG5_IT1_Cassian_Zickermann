@@ -16,7 +16,7 @@ public class GameControl {
 
 	private int score = 0;
 
-	private ArrayList<Planet> listPlaneten = new ArrayList<Planet>();
+	private ArrayList<Himmelskoerper> listHimmelskoerper = new ArrayList<Himmelskoerper>();
 	private ArrayList<Ladung> listLadungen = new ArrayList<Ladung>();
 
 	private Universum universum;
@@ -81,15 +81,15 @@ public class GameControl {
 		}
 	}
 
-	public void addPlanet(Planet meinPlanet) {
-		if (!listPlaneten.contains(meinPlanet)) {
-			listPlaneten.add(meinPlanet);
+	public void addHimmelskoerper(Himmelskoerper meinHimmelskoerper) {
+		if (!listHimmelskoerper.contains(meinHimmelskoerper)) {
+			listHimmelskoerper.add(meinHimmelskoerper);
 		}
 	}
 
 	public void removePlanet(Planet meinPlanet) {
-		if (listPlaneten.contains(meinPlanet)) {
-			listPlaneten.remove(meinPlanet);
+		if (listHimmelskoerper.contains(meinPlanet)) {
+			listHimmelskoerper.remove(meinPlanet);
 		}
 	}
 
@@ -185,7 +185,7 @@ public class GameControl {
 	 * <= y && y <= raumschiff.getPosY() + 10); }
 	 */
 
-	private void drawPlanet(Planet planet) {
+	private void drawPlanet(Himmelskoerper planet) {
 		int centerX = (int) planet.getPosX();
 		int centerY = (int) planet.getPosY();
 		Position transformedPos = transformPos(new Position(centerX, centerY));
@@ -207,8 +207,8 @@ public class GameControl {
 		drawFrame();
 		drawStars();
 		// Male alle Planeten
-		for (Planet planet : listPlaneten) {
-			drawPlanet(planet);
+		for (Himmelskoerper himmerlskoerper : listHimmelskoerper) {
+			drawPlanet(himmerlskoerper);
 		}
 		// Male alle Ladungen
 		for (Ladung ladung : listLadungen) {
