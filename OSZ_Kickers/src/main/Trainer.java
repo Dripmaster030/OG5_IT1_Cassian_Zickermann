@@ -1,11 +1,14 @@
 package main;
 
 public class Trainer extends Mitglied {
-
     private char lizenzklasse;
     private int aufwandsentschaedigung;
 
-    public Trainer() {
+    public Trainer(String name, int telefonnummer, boolean beitragBezahlt, char lizenzklasse, int aufwandsentschaedigung) {
+
+        super(name, telefonnummer, beitragBezahlt);
+        this.lizenzklasse = lizenzklasse;
+        this.aufwandsentschaedigung = aufwandsentschaedigung;
     }
 
     public char getLizenzklasse() {
