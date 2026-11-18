@@ -30,8 +30,16 @@ public class TestProgramm {
 		
 		System.out.println(System.currentTimeMillis() - time + "ms");
 		
-		System.out.println(a[100]);
+		System.out.println(a[101]);
 		
-		
+		long suchZahl = 2000000000;
+	
+		SuchAlgorithmus s1 = new SuchAlgorithmus();
+		long z1 = s1.lineareSuche(a, suchZahl);
+		System.out.println(z1);
+		System.out.println(System.currentTimeMillis() - time + "ms");
+		z1 = s1.interpolationsSuche(a, suchZahl);
+		System.out.println(z1);
+		System.out.println(System.currentTimeMillis() - time + "ms");
 	}
 }
